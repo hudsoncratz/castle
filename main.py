@@ -1,6 +1,7 @@
 import requests
 import schedule
 import re
+import os
 import random
 from bs4 import BeautifulSoup
 import telebot
@@ -12,8 +13,8 @@ import pytz
 # --- Configurações ---
 url = "https://shop.ticket-center-hohenschwangau.de/Shop/PerformResUpdate2/de-DE/39901"
 cookie_sessao = f"ASP.NET_SessionId=COLOQUE_SEU_COOKIE_AQUI{random.randrange(5,50000)}"
-telegram_token = API_TOKEN
-chat_id = CHAT_ID
+telegram_token = os.environ["API_TOKEN"]
+chat_id = os.environ["CHAT_ID"]
 
 # Fuso horário da Alemanha (CET/CEST)
 timezone = pytz.timezone("Europe/Berlin")
@@ -127,13 +128,14 @@ def agendar_verificacao(datas: list[str]) -> None:
         schedule.run_pending()
         time.sleep(60)
 
+if __name__ == "__main__":
 # --- Inicia o processo ---
-datas = [
-    calcular_data_hoje(),
-    calcular_data_ammanha(),
-    '22.08.2025',
-    '23.08.2025',
-    '24.08.2025'
-]
-for data in datas:
-    verificar_disponibilidade(data)
+    datas = [
+        calcular_data_hoje(),
+        calcular_data_ammanha(),
+        '22.08.2025',
+        '23.08.2025',
+        '24.08.2025'
+    ]
+    for data in datas:
+        verificar_disponibilidade(data)
