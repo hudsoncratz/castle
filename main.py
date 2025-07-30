@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 import telebot
 import time
 from datetime import datetime, timedelta
-from config import *
 import pytz
 
 # --- Configurações ---
