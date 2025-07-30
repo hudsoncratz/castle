@@ -3,7 +3,7 @@ name: Python Cron Job
 on:
   schedule:
     # Roda a cada uma hora
-    - cron: '10 * * * *'
+    - cron: '45 * * * *'
     # Roda entre 4h e 7h a cada 30 minutos
     - cron: '30 4-7 * * *'
   workflow_dispatch: # Permite executar manualmente também
@@ -12,7 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
       - name:  Checar repositório
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
