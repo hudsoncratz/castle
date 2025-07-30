@@ -4,8 +4,8 @@ on:
   schedule:
     # Roda a cada hora
     - cron: '0 * * * *'
-    # Roda entre 6h e 9h a cada 30 minutos
-    - cron: '30 6-9 * * *'
+    # Roda entre 4h e 7h a cada 30 minutos
+    - cron: '30 4-7 * * *'
   workflow_dispatch: # Permite executar manualmente também
 
 jobs:
