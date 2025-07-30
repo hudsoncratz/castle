@@ -3,7 +3,7 @@ name: Python Cron Job
 on:
   schedule:
     # Roda a cada uma hora
-    - cron: '45 * * * *'
+    - cron: '0 * * * *'
     # Roda entre 4h e 7h a cada 30 minutos
     - cron: '30 4-7 * * *'
   workflow_dispatch: # Permite executar manualmente também
