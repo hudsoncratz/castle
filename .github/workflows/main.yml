@@ -2,7 +2,7 @@ name: Python Cron Job
 
 on:
   schedule:
-    # Roda a cada hora
+    # Roda a cada uma hora
     - cron: '@hourly'
     # Roda a cada 25 min
     - cron: '25 * * * *'
