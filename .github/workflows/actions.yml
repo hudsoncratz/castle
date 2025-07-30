@@ -2,8 +2,8 @@ name: run main.py
 
 on:
   schedule:
-    # Roda a cada uma hora
-    - cron: '2 * * * *'
+    # Roda a cada meia hora
+    - cron: '30 * * * *'
 
 jobs:
   build:
